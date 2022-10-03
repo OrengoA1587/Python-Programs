@@ -84,25 +84,18 @@ def AnswerChecker():
             print("Invalid input!")
         else:
             print("Great Job!")
+            while contLoop == False:
+                cont = input("Continue Y/N -->")
+                if cont.lower() == "y":
+                    print("")
+                elif cont.lower() == "n":
+                    contLoop = True
+                    checkLoop = True
+                else:
+                    print("Invalid Input!")
         
-        while contLoop == False:
-
-            cont = input("\nContinue \'y\'/\'n\' --> ")
-            if cont.lower() == 'y':
-                print(" ")
-            elif cont.lower() == 'n':
-                contloop == True
-                checkLoop = True
-            else:
-                print("Invalid Input!")
-
-
-            
-
-
-
-
-
+        
+   
 def TODO():
     print("Pending")
 def Main():
