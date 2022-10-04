@@ -15,9 +15,9 @@ def Main():
         choice = input("Select from the Menu --> ")
 
         if choice == "1":
-            AC.AnswerChecker()
+            AC.AnswerChecker()#Start Answer Checker Game
         elif choice == "2":
-            NG.GuessNumber()
+            NG.GuessNumber()#Start Number Guessser Game
             TODO()
         elif choice == "3":
             TODO()

@@ -9,18 +9,18 @@ def GuessNumber():
     menuLoop = False
 
     while menuLoop == False:
-
+        #Display functional menu to user
         DL.GuessNumberMenu()
         choice = input("Select from the Menu --> ")
         if choice == "1":
-            GuessTheNumber(1,10)            
+            GuessTheNumber(1,10)#Random number 1-10           
         elif choice == "2":
-            GuessTheNumber(1,20)
+            GuessTheNumber(1,20)#Random number 1-20  
              
         elif choice == "3":
-            GuessTheNumber(1,50)
+            GuessTheNumber(1,50)#Random number 1-30  
         elif choice == "4":
-            GuessTheNumber(1,100)
+            GuessTheNumber(1,100)#Random number 1-100
         elif choice == "8":
             menuLoop = True
         else:
@@ -35,17 +35,23 @@ def GuessTheNumber(num1,num2):
     correctNum = str(randNum)
     print(correctNum)
     while loop == False:
-        userInput = input("Guess the number between 1 and 10 --> ")
-        if increment > 1:
-            print("You ran out of chances! The random number was: ", correctNum)
+        userInput = input("Guess a number between " + str(num1) + " and " + str(num2) + " --> ")
+        if userInput == correctNum:
+            print("\nGreat Job!\n")
+            loop = True
+        elif increment > 1:
+            print("You ran out of chances! The random number was: ", correctNum, "\n")
             loop = True
         elif userInput != correctNum:
-            print("Try Again!")
+            if int(userInput) > int(correctNum):
+                print("To High! Try a lower number.\n")
+            elif int(userInput) < int(correctNum):
+                print("To Low! Try a higher number.\n")
+            #print("Try Again!")
             increment += 1
          
-        elif userInput == correctNum:
-            print("Great Job!")
-            loop = True
-         
+        
+        else:
+            print("Invalid Input!")
 
             
