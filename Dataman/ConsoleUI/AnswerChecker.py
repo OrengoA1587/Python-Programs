@@ -9,7 +9,7 @@ def CheckCharArrayForSpecificCharacters(letter):
         #num1 = letter[0]
         #num2 = letter[2]
         #num3 = letter[4]
-        if not letter:
+        if not letter or len(letter) < 5:
              
             return False
         elif str(letter[0]).isdigit and str(letter[2]).isdigit and str(letter[4]).isdigit and letter[3] == '=' and letter[1] == '+' or letter[1] == '-' or letter[1] == '/' or letter[1].lower() == 'x':
