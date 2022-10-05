@@ -21,7 +21,7 @@ def GuessNumber():
             GuessTheNumber(1,50)#Random number 1-30  
         elif choice == "4":
             GuessTheNumber(1,100)#Random number 1-100
-        elif choice == "8":
+        elif choice == "5":
             menuLoop = True
         else:
             print("Invalid Selction!")

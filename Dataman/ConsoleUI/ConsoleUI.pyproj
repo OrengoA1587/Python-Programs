@@ -26,6 +26,7 @@
     <Compile Include="ConsoleUI.py" />
     <Compile Include="DatamanLibrary.py" />
     <Compile Include="Continue.py" />
+    <Compile Include="ForceOut.py" />
     <Compile Include="NumberGuesser.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

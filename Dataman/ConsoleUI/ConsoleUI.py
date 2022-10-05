@@ -2,7 +2,7 @@ import re
 import DatamanLibrary as DL
 import AnswerChecker as AC
 import NumberGuesser as NG
- 
+import ForceOut as FO
    
 def TODO():
     print("Pending")
@@ -18,9 +18,9 @@ def Main():
             AC.AnswerChecker()#Start Answer Checker Game
         elif choice == "2":
             NG.GuessNumber()#Start Number Guessser Game
-            TODO()
+            
         elif choice == "3":
-            TODO()
+            FO.ForceOutGameSelection()
         elif choice == "4":
             TODO()
         elif choice == "8":
