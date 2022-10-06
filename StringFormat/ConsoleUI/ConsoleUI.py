@@ -32,6 +32,7 @@ def main():
   print(make_field(1000,7))
   print(make_field("year",8))
   print(make_field("world",5))
+  input()
 
 main()
 
