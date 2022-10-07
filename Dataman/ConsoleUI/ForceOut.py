@@ -13,11 +13,11 @@ def ForceOutGameSelection():
         if choice == "1":
             ForceOutGame(10,20)#Random number 10-20
         elif choice == "2":
-            ForceOutGame(20,40)#Random number 10-20               
+            ForceOutGame(20,40)#Random number 20-40               
         elif choice == "3":
-            ForceOutGame(40,80)#Random number 10-20  
+            ForceOutGame(40,80)#Random number 40-80  
         elif choice == "4":
-            ForceOutGame(80,120)#Random number 10-20
+            ForceOutGame(80,120)#Random number 80-120
         elif choice == "5":
             menuLoop = True
         else:

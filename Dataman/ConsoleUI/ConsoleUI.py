@@ -3,7 +3,8 @@ import DatamanLibrary as DL
 import AnswerChecker as AC
 import NumberGuesser as NG
 import ForceOut as FO
-   
+import MissingNumber as MN
+
 def TODO():
     print("Pending")
 def Main():
@@ -22,7 +23,7 @@ def Main():
         elif choice == "3":
             FO.ForceOutGameSelection()
         elif choice == "4":
-            TODO()
+            MN.MissingNumberGameSelection()
         elif choice == "8":
             menuLoop = True
         else:

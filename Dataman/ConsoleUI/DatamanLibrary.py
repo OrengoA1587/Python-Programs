@@ -4,7 +4,7 @@ def MainMenu():
           "1. Answer Checker\n"+
           "2. Number Guesser\n"+
           "3. Force Out\n"+
-          "4. TODO\n"+
+          "4. Missing Number\n"+
           "5. Exit\n")
 def GuessNumberMenu():
 
@@ -18,6 +18,15 @@ def GuessNumberMenu():
 def ForceOutMenu():
 
     print("Force Out\n"+
+          "1. Start Number 10-20\n"+
+          "2. Start Number 20-40\n"+
+          "3. Start Number 40-80\n"+
+          "4. Start number 80-120\n"+
+          "5. Exit\n")
+
+def MissingNumberMenu():
+
+    print("Missing Number\n"+
           "1. Start Number 10-20\n"+
           "2. Start Number 20-40\n"+
           "3. Start Number 40-80\n"+
