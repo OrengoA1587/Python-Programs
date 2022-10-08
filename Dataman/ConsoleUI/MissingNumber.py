@@ -25,7 +25,8 @@ def MissingNumberGameSelection():
             print("Invalid Selction!")
 
 def MissingNumberGame(x,y):
-    allowed_operators={
+    #Define list of authorized operators as a dictionary (key: operator type and value = function type)
+    auth_operators={
     "+": op.add,
     "-": op.sub,
     "*": op.mul,
@@ -49,7 +50,7 @@ def MissingNumberGame(x,y):
        num2 = num3       
     
     #Calculate total 
-    total = allowed_operators[operator](num1,num2)
+    total = auth_operators[operator](num1,num2) #The random operator is sent to the auth_operators dictionary and the arguments (num1,num2) are calculated based on operator type
     problemList = [str(num1),str(num2),str(total)]
         #Get random subscript number to determine which subscript number will be removed from the displayed problem
     subscriptRand = random.randint(0,2)
