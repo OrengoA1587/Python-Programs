@@ -4,7 +4,7 @@ import AnswerChecker as AC
 import NumberGuesser as NG
 import ForceOut as FO
 import MissingNumber as MN
-
+import MemoryBank as MB
 def TODO():
     print("Pending")
 def Main():
@@ -24,7 +24,9 @@ def Main():
             FO.ForceOutGameSelection()
         elif choice == "4":
             MN.MissingNumberGameSelection()
-        elif choice == "8":
+        elif choice == "5":
+            MB.MemoryBankMenuSelection()
+        elif choice == "6":
             menuLoop = True
         else:
             print("Invalid Selction!")
