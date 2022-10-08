@@ -41,3 +41,6 @@ def MemoryBankMenu():
           "2. Add to Bank\n"+
           "3. Clear Bank\n"+          
           "4. Exit\n")
+
+def DisplayMemoryBankInputError():
+    print("\n*******ERROR******\n\n1. Invalid Problem!\n2. Problem must be written in format 1+1=2 \n3. Answer must be correct \n\n******************\n")

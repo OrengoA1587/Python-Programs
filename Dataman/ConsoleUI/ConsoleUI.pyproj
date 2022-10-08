@@ -27,6 +27,8 @@
     <Compile Include="DatamanLibrary.py" />
     <Compile Include="Continue.py" />
     <Compile Include="ForceOut.py" />
+    <Compile Include="MemoryBank.py" />
+    <Compile Include="MemoryBankProblemVerification.py" />
     <Compile Include="MissingNumber.py" />
     <Compile Include="NumberGuesser.py" />
   </ItemGroup>
