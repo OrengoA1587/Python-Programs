@@ -1,7 +1,7 @@
 
 import random
 import DatamanLibrary as DL
-
+import operator as op
 
 def MissingNumberGameSelection():
 
@@ -25,6 +25,12 @@ def MissingNumberGameSelection():
             print("Invalid Selction!")
 
 def MissingNumberGame(x,y):
+    allowed_operators={
+    "+": op.add,
+    "-": op.sub,
+    "*": op.mul,
+    "/": op.truediv}
+
     #Declare and initialize operator list
     operatorList = ['+','-','*']
 
@@ -40,93 +46,96 @@ def MissingNumberGame(x,y):
     if num2 > num1:
        num3 = num1
        num1 = num2
-       num2 = num3
-        
-    #Run through scenarios based on operator variable 
-    if operator == '+':
-        #ADDITION 
-        #Calculate total by adding num1 and num2 and store variables in problem list
-        total = num1 + num2
-        problemList = [str(num1),str(num2),str(total)]
-        #Get random 
-        subscriptRand = random.randint(0,2)
+       num2 = num3       
+    
+    #Calculate total 
+    total = allowed_operators[operator](num1,num2)
+    problemList = [str(num1),str(num2),str(total)]
+        #Get random subscript number to determine which subscript number will be removed from the displayed problem
+    subscriptRand = random.randint(0,2)
          
-        if subscriptRand == 0:    
-            print(f"? + {problemList[1]} = {problemList[2]}")
-            userInput = input("Guess the Missing Number --> ")
+    if subscriptRand == 0: #Number at subscript "0" is removed from the math problem.   
+            print(f"? {operator} {problemList[1]} = {problemList[2]}") #Display math problem to user with missing number
+            userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
             if userInput == problemList[0]:
                 print("Great Job!")
             elif userInput != problemList[0]:
                 print("Wrong Answer!")
-        elif subscriptRand == 1:
-            print(f"{problemList[0]} + ? = {problemList[2]}")
-            userInput = input("Guess the Missing Number --> ")
+    elif subscriptRand == 1:#Number at subscript "1" is removed from the math problem.
+            print(f"{problemList[0]} {operator} ? = {problemList[2]}") #Display math problem to user with missing number
+            userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
             if userInput == problemList[1]:
                 print("Great Job!")
             elif userInput != problemList[1]:
                 print("Wrong Answer!")
-        elif subscriptRand == 2:
-            print(f"{problemList[0]} + {problemList[1]} = ?")
-            userInput = input("Guess the Missing Number --> ")
+    elif subscriptRand == 2:#Number at subscript "2" is removed from the math problem.
+            print(f"{problemList[0]} {operator} {problemList[1]} = ?") #Display math problem to user with missing number
+            userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
             if userInput == problemList[2]:
                 print("Great Job!")
             elif userInput != problemList[2]:
-                print("Wrong Answer!")
+                print("Wrong Answer!")     
 
-    elif operator == '-':
-        #SUBTRACTION
-        total = num1 - num2        
-        problemList = [str(num1),str(num2),str(total)]       
-        subscriptRand = random.randint(0,2)        
-        if subscriptRand == 0:
-            print(f"? - {problemList[1]} = {problemList[2]}")
-            userInput = input("Guess the Missing Number --> ")
-            if userInput == problemList[0]:
-                print("Great Job!")
-            elif userInput != problemList[0]:
-                print("Wrong Answer!")
-        elif subscriptRand == 1:
-            print(f"{problemList[0]} - ? = {problemList[2]}")
-            userInput = input("Guess the Missing Number --> ")
-            if userInput == problemList[1]:
-                print("Great Job!")
-            elif userInput != problemList[1]:
-                print("Wrong Answer!")
-        elif subscriptRand == 2:
-            print(f"{problemList[0]} - {problemList[1]} = ?")
-            userInput = input("Guess the Missing Number --> ")
-            if userInput == problemList[2]:
-                print("Great Job!")
-            elif userInput != problemList[2]:
-                print("Wrong Answer!")
-    elif operator == '*':
-        #MULTIPLICATION
-        total = num1 * num2
-        problemList = [str(num1),str(num2),str(total)]       
+
+
+
+
+
+    #CODE REDUCTION_________________________________________________________________________________________________________________________________
+    #elif operator == '-':
+    #    #SUBTRACTION
+    #    total = num1 - num2        
+    #    problemList = [str(num1),str(num2),str(total)]       
+    #    subscriptRand = random.randint(0,2)        
+    #    if subscriptRand == 0: #Number at subscript "0" is removed from the math problem.  
+    #        print(f"? - {problemList[1]} = {problemList[2]}") #Display math problem to user with missing number
+    #        userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
+    #        if userInput == problemList[0]:
+    #            print("Great Job!")
+    #        elif userInput != problemList[0]:
+    #            print("Wrong Answer!")
+    #    elif subscriptRand == 1: #Number at subscript "1" is removed from the math problem. 
+    #        print(f"{problemList[0]} - ? = {problemList[2]}") #Display math problem to user with missing number
+    #        userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
+    #        if userInput == problemList[1]:
+    #            print("Great Job!")
+    #        elif userInput != problemList[1]:
+    #            print("Wrong Answer!")
+    #    elif subscriptRand == 2: #Number at subscript "2" is removed from the math problem. 
+    #        print(f"{problemList[0]} - {problemList[1]} = ?") #Display math problem to user with missing number
+    #        userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
+    #        if userInput == problemList[2]:
+    #            print("Great Job!")
+    #        elif userInput != problemList[2]:
+    #            print("Wrong Answer!")
+    #elif operator == '*':
+    #    #MULTIPLICATION
+    #    total = num1 * num2
+    #    problemList = [str(num1),str(num2),str(total)]       
         
-        subscriptRand = random.randint(0,2)
+    #    subscriptRand = random.randint(0,2)
        
-        if subscriptRand == 0:
-            print(f"? * {problemList[1]} = {problemList[2]}")
-            userInput = input("Guess the Missing Number --> ")
-            if userInput == problemList[0]:
-                print("Great Job!")
-            elif userInput != problemList[0]:
-                print("Wrong Answer!")
-        elif subscriptRand == 1:
-            print(f"{problemList[0]} * ? = {problemList[2]}")
-            userInput = input("Guess the Missing Number --> ")
-            if userInput == problemList[1]:
-                print("Great Job!")
-            elif userInput != problemList[1]:
-                print("Wrong Answer!")
-        elif subscriptRand == 2:
-            print(f"{problemList[0]} * {problemList[1]} = ?")
-            userInput = input("Guess the Missing Number --> ")
-            if userInput == problemList[2]:
-                print("Great Job!")
-            elif userInput != problemList[2]:
-                print("Wrong Answer!")
+    #    if subscriptRand == 0: #Number at subscript "0" is removed from the math problem.  
+    #        print(f"? * {problemList[1]} = {problemList[2]}")
+    #        userInput = input("Guess the Missing Number --> ")
+    #        if userInput == problemList[0]:
+    #            print("Great Job!")
+    #        elif userInput != problemList[0]:
+    #            print("Wrong Answer!")
+    #    elif subscriptRand == 1: #Number at subscript "1" is removed from the math problem. 
+    #        print(f"{problemList[0]} * ? = {problemList[2]}")
+    #        userInput = input("Guess the Missing Number --> ")
+    #        if userInput == problemList[1]:
+    #            print("Great Job!")
+    #        elif userInput != problemList[1]:
+    #            print("Wrong Answer!")
+    #    elif subscriptRand == 2: #Number at subscript "2" is removed from the math problem. 
+    #        print(f"{problemList[0]} * {problemList[1]} = ?")
+    #        userInput = input("Guess the Missing Number --> ")
+    #        if userInput == problemList[2]:
+    #            print("Great Job!")
+    #        elif userInput != problemList[2]:
+    #            print("Wrong Answer!")
 
 
     #TODO: DIVISION
@@ -155,4 +164,4 @@ def MissingNumberGame(x,y):
     #        if userInput == problemList[3]:
     #            print("Great Job!")
     #        elif userInput != problemList[3]:
-    #            print("Wrong Answer!")
+    #            print("Wrong Answer!")__________________________________________________________________________________________________________________________________________________________________________
