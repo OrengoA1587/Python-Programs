@@ -31,13 +31,19 @@ def ForceOutGame(num1,num2):
         userInput = input("Enter Number to Subtract --> ")
         if userInput.isdigit():
             if int(userInput) <= 9:
-                x = int(userInput)
-                gameNum -= x
-                if gameNum > 0:
-                    print("Keep Going!\nCurrent Number: ",gameNum)
+                if gameNum < int(userInput):
+                    print("Your number is higher than the current number.\nCurrent Number: ",gameNum)
+                else:
+                    x = int(userInput)
+                    gameNum -= x
+                    if gameNum > 0:
+                        print("Keep Going!\nCurrent Number: ",gameNum)          
+                
             else:
-                print("Invalid Entry! Select a number 1-9")                
+                print("Invalid Entry! Select a number 1-9\nCurrent Number: ",gameNum)    
+                
         else:
-            print("Invalid Entry!")             
+            print("Invalid Entry!\nCurrent Number: ",gameNum) 
+             
 
     print("Great Job!\n")

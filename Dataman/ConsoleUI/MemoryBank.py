@@ -67,17 +67,9 @@ def PlayMemoryBank():
                     else:
                         print("Sorry! Incorrect Answer.")
 
-                    count -= 1
-                 
-                 
-
+                    count -= 1       
     else:
         print("Memory Bank Empty...")
-#if count == 0:
-#            print("Game Over.....")
-#        else:
-#            print()
-
      
 def AddToBank():
     count = 0
