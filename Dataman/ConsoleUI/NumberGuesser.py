@@ -37,7 +37,7 @@ def GuessTheNumber(num1,num2):
     while loop == False:
         userInput = input("Guess a number between " + str(num1) + " and " + str(num2) + " --> ")
         if userInput == correctNum:
-            print("\nGreat Job!\n")
+            print("\n*************\nGreat Job!\n\n*************\n")
             loop = True
         elif increment > 1:
             print("You ran out of chances! The random number was: ", correctNum, "\n")

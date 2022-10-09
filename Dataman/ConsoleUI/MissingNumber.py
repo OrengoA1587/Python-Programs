@@ -60,21 +60,21 @@ def MissingNumberGame(x,y):
             print(f"? {operator} {problemList[1]} = {problemList[2]}") #Display math problem to user with missing number
             userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
             if userInput == problemList[0]:
-                print("Great Job!")
+                print("\n*************\nGreat Job!\n\n*************\n")
             elif userInput != problemList[0]:
                 print("Wrong Answer!")
     elif subscriptRand == 1:#Number at subscript "1" is removed from the math problem.
             print(f"{problemList[0]} {operator} ? = {problemList[2]}") #Display math problem to user with missing number
             userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
             if userInput == problemList[1]:
-                print("Great Job!")
+                print("\n*************\nGreat Job!\n\n*************\n")
             elif userInput != problemList[1]:
                 print("Wrong Answer!")
     elif subscriptRand == 2:#Number at subscript "2" is removed from the math problem.
             print(f"{problemList[0]} {operator} {problemList[1]} = ?") #Display math problem to user with missing number
             userInput = input("Guess the Missing Number --> ") #Get user input to guess the missing number
             if userInput == problemList[2]:
-                print("Great Job!")
+                print("\n*************\nGreat Job!\n\n*************\n")
             elif userInput != problemList[2]:
                 print("Wrong Answer!")     
 
