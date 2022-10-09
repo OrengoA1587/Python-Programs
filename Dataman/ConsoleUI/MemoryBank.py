@@ -34,12 +34,12 @@ def PlayMemoryBank():
     "*": op.mul,
     "/": op.truediv}
     count =0
+    score = 0
 
     with open("GameBank.txt", mode="r") as gameFile:              
          for count, line in enumerate(gameFile):    
                 
-             pass
-     
+             pass    
         
     if count + 1 > 0:  
         with open("GameBank.txt", mode="r") as gameFile:
@@ -64,13 +64,16 @@ def PlayMemoryBank():
 
                     if answer == str(total):
                         print("Great Job!")
+                        score += 1
                     else:
                         print("Sorry! Incorrect Answer.")
 
-                    count -= 1       
+                    count -= 1  
+            print(f"\n*****GAMEOVER*****\n\nPLAYER SCORE: {score}\n\n******************\n")
+            gameFile.close()
     else:
         print("Memory Bank Empty...")
-     
+        gameFile.close()
 def AddToBank():
     count = 0
     #Get admin authentication by verifying password from txt doc
@@ -82,8 +85,8 @@ def AddToBank():
         password2 = readDoc.readline()
     readDoc.close()
     if password == password2:            
-       with open("GameBank.txt", mode="r") as fp:              
-            for count, line in enumerate(fp):    
+       with open("GameBank.txt", mode="r") as gameFile:              
+            for count, line in enumerate(gameFile):    
                 
                 pass
        #print(count + 1)
@@ -92,28 +95,29 @@ def AddToBank():
             problem = ''.join(problem.split()) #Split problem to eliminate white space and string together
              
             if MBPV.VerifyMemoryBankProblem(problem) == True:
-                with open("GameBank.txt", mode = "w") as f:
-                     f.write(problem)
+                with open("GameBank.txt", mode = "w") as gameFile:
+                     gameFile.write(problem)
                      print("Problem Added Successfully")
-                     f.close()
+                     gameFile.close()
             else:
                 DL.DisplayMemoryBankInputError()
        elif count +1 < 10 and count +1 > 0:
             problem = input("Enter Problem --> ")
             problem = ''.join(problem.split()) #Split problem to eliminate white space and string together
             if MBPV.VerifyMemoryBankProblem(problem) == True:
-                with open("GameBank.txt", mode = "a") as f:
-                     f.write(f"\n{problem}")
+                with open("GameBank.txt", mode = "a") as gameFile:
+                     gameFile.write(f"\n{problem}")
                      print("Problem Added Successfully")
-                     f.close()
+                     gameFile.close()
             else:
                 DL.DisplayMemoryBankInputError()
+                gameFile.close()
        elif count == 10:
             print("Memory Bank Full! Clear bank!")   
-                    
+            gameFile.close()        
     else:
         print("Invalid Password!")
-    
+        
 def ClearBank():
     #Clear txt doc
     password = input("Enter Admin Password --> ")
