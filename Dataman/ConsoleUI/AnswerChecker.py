@@ -27,6 +27,11 @@ def CheckAnswerChecker(letter):
            #store subscripts 0 and 2 in variables num1 and num2 for later user
            num1 = int(letter[0]) 
            num2 = int(letter[2])
+           #Determine is num2 is greater than num1; used to avoid negative numbers
+           if num2 > num1:
+                num3 = num1
+                num1 = num2
+                num2 = num3  
     
            total = num1 + num2 #Perform calculation to determine correct answer
 
