@@ -1,5 +1,4 @@
-
-import re
+#Imported Dataman Modulesimport re
 import operator as op
 import AnswerChecker as AC
 def VerifyMemoryBankProblem(problem):
