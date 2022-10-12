@@ -3,7 +3,7 @@
 
 import Continue as con
 import re # Regex import to customize string input
- 
+import operator as op
 
 def CheckCharArrayForSpecificCharacters(letter):    
         #Determine if letter array has exactly 5 subscripts
@@ -18,7 +18,11 @@ def CheckCharArrayForSpecificCharacters(letter):
             return False
  
 def CheckAnswerChecker(letter):
-    
+   auth_operators={
+    "+": op.add,
+    "-": op.sub,
+    "*": op.mul,
+    "/": op.truediv}  
    loop = False
    while loop == False:       
        if CheckCharArrayForSpecificCharacters(letter) == False: #Determine is list contain correct characters at the given subscript
@@ -28,39 +32,17 @@ def CheckAnswerChecker(letter):
            num1 = int(letter[0]) 
            num2 = int(letter[2])
            #Determine is num2 is greater than num1; used to avoid negative numbers
-           if num2 > num1:
+           if num2 > num1 and letter[1] != "/":
                 num3 = num1
                 num1 = num2
-                num2 = num3  
-    
-           total = num1 + num2 #Perform calculation to determine correct answer
+                num2 = num3     
 
-           if letter[1] == '+':
-                total = num1 + num2 #Calculate correct answer
-                if total == int(letter[4]): # Check answer
-                    return True
-                else:
-                    return False
-           elif letter[1] == '-':
-                total = num1 - num2 #Calculate correct answer
-                if total == int(letter[4]): # Check answer
-                    return True
-                else:
-                    return False
-           elif letter[1] == 'X' or letter[1] == 'x' or letter[1] == '*':
-                total = num1 * num2 #Calculate correct answer
-                if total == int(letter[4]): # Check answer
-                    return True
-                else:
-                    return False
-           elif letter[1] == '/':
-                total = num1 / num2 #Calculate correct answer
-                if total == int(letter[4]): # Check answer
-                    return True
-                else:
-                    return False
+           total = auth_operators[letter[1]](num1,num2) #Calculate answer 
+           if total == int(letter[4]): # Check answer
+               return True #Return true for correct
            else:
-               return "invalid"
+               return False #Return false for incorrect
+          
 def AnswerChecker():
     
     checkLoop = False  

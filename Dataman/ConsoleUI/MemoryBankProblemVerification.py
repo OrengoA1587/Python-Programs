@@ -25,11 +25,4 @@ def VerifyMemoryBankProblem(problem):
     else:       
         return False
 
-    #total = auth_operators[operator](num1,num2)
-    #print(total)
-    #print(usersInputTotal)
-    #print(operator)
-    #print(num1,num2,total)
-
-
     

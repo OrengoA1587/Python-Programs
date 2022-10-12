@@ -22,7 +22,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AnswerChecker.py" />
-    <Compile Include="CheckAnswerArray.py" />
     <Compile Include="ConsoleUI.py" />
     <Compile Include="DatamanLibrary.py" />
     <Compile Include="Continue.py" />
