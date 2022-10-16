@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ConsoleUI", "ConsoleUI\ConsoleUI.pyproj", "{D1F22F86-4221-4172-8CD8-70D0502679DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1F22F86-4221-4172-8CD8-70D0502679DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1F22F86-4221-4172-8CD8-70D0502679DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0516F32-A131-4AE2-8C11-293048C65A4F}
+	EndGlobalSection
+EndGlobal
