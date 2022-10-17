@@ -9,8 +9,8 @@ def generate_dir_report(path):
      
     for root,dirs,files in sorted((os.walk(path))): 
         filepath = root
-        print(get_path_depth(filepath))
-         
+        #print(get_path_depth(filepath))
+        print(path)
         for file_name in sorted(files):            
              
             print(f'{file_name}')
