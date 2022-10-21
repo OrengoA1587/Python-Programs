@@ -21,8 +21,9 @@ def access_item(num,container_type):
    
     if type(container_type) == list:
         return container_type[num]         
-    elif container_type == dict:
-        return container_type
+    elif type(container_type) == dict:
+        #print(container_type.get(num))
+        return container_type.get(9)
     elif container_type == 'set':
         container_type = set()
     elif container_type == 'tuple':
@@ -32,8 +33,7 @@ def access_item(num,container_type):
  
 # TODO 3: Implement the `add_item` function here.
 def add_item(num,container_type):
-    print(num[0])
-    print(num[1]) 
+     
     if type(container_type) == list:
         container_type.append(num)
         return container_type        
@@ -42,9 +42,9 @@ def add_item(num,container_type):
         return container_type
     elif type(container_type) == set: 
         container_type.add(num)
+        return container_type          
+    elif type(container_type) == tuple:
         return container_type
-          
-    #elif container_type == 'tuple':
          
 # TODO 4: Implement the `remove_item` function here.
 
@@ -55,11 +55,40 @@ def add_item(num,container_type):
 # TODO 6: Implement the `convert_container` function here.
 
 def main():
-    container = create_container('dict')
-     
+    container = create_container('dict')     
     container = add_item((9,'e'),container)
+    container = access_item(9,container)
     print(container)
+
+
 main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #container = {1,2,3,4}
     #add_item(9,container) 
      
