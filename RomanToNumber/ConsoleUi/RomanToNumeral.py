@@ -1,11 +1,11 @@
 
+
+
 import RomanLibrary as RL
-import RomanToNumeral as RTN
-import EnterDate as ED
+
 dict_roman = {'I':1,'IV':4,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,'MTV': 4000, 'IVT':5000, 'XT':10000}
 
 def Roman_Numeral(lst):
-
     lst_convert = [] # used to store converted roman numerals to numbers
     date = 0 # date counter 
     for letter in lst:
@@ -24,28 +24,28 @@ def Roman_Numeral(lst):
     return date 
 
 
-def main():
-    menu_loop = False
-
-    while menu_loop == False: 
-
-        choice = input(RL.MainMenu())
-         
-        if choice == '1':
-            RTN.EnterRoman()
-        elif choice == '2':
-            ED.NumeralToRoman()
-        elif choice == '3':
-            menu_loop = True
+menu_loop = False
+def EnterRoman():
+    loop_input = ''
+    loop = False
+    while loop == False:
+        lst = []
+        str_roman = input("Enter Roman Numeral: ")
+        str_roman = str_roman.upper()
+        invalid_roman = False
+        for letter in str_roman:
+            if letter in dict_roman:
+                lst.append(letter)
+            else:                
+                invalid_roman = True
+        if invalid_roman == False:
+            print(f'Date: {Roman_Numeral(lst)}') #Display converted date to user
+            loop_input = input('Would you like to enter another? y/n')
+            if loop_input.upper() == 'Y':
+                loop = False
+            elif loop_input.upper() == 'N':
+                loop = True
+            else:
+                print('Invalid input!')
         else:
-            print("Invalid Selection!")
-
-
-if __name__ == '__main__':     
-      
-    main()
-
-    
-         
-
-     
+            print("Invalid Characters!")
