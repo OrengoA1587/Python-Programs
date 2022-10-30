@@ -111,7 +111,7 @@ def NumeralToRoman():
             final = ''.join(lst_convert)
 
             print(f'\nRoman Numeral Date: {final}\n')
-            loop_input = input('Would you like to enter another? y/n')
+            loop_input = input('Would you like to enter another? y/n ')
             if loop_input.upper() == 'Y':
                 loop = False
             elif loop_input.upper() == 'N':

@@ -40,7 +40,7 @@ def EnterRoman():
                 invalid_roman = True
         if invalid_roman == False:
             print(f'Date: {Roman_Numeral(lst)}') #Display converted date to user
-            loop_input = input('Would you like to enter another? y/n')
+            loop_input = input('Would you like to enter another? y/n ')
             if loop_input.upper() == 'Y':
                 loop = False
             elif loop_input.upper() == 'N':
