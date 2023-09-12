@@ -22,6 +22,8 @@ def CheckAnswerChecker(letter):
     "+": op.add,
     "-": op.sub,
     "*": op.mul,
+    "x": op.mul,
+    "X": op.mul,
     "/": op.truediv}  
    loop = False
    while loop == False:       
